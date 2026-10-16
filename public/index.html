@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="./styles.css">
   <script src="./app.js" defer></script>
 </head>
-<body data-page="home" class="home-clean">
+<body data-page="home" class="home-clean home-column">
 <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 <div class="reading-progress" aria-hidden="true"></div>
 <header class="site-header">
@@ -25,7 +25,7 @@
     <a class="brand" href="./" aria-label="Frete Express, início"><img src="./assets/brand.svg" width="35" height="35" alt=""><span class="brand-name">Frete Express</span></a>
     <button class="menu-button" type="button" aria-label="Abrir menu" aria-controls="menu-principal" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     <nav class="nav" id="menu-principal" aria-label="Menu principal">
-      <a href="#apresentacao">Vídeo</a><a href="#plataforma">Telas</a><a href="#contato" class="btn btn-primary">Contato <span aria-hidden="true">↗</span></a>
+      <a href="#apresentacao">Vídeo</a><a href="#sobre">Sobre</a><a href="#plataforma">Telas</a><a href="#contato" class="btn btn-primary">Contato <span aria-hidden="true">↗</span></a>
     </nav>
   </div>
 </header>
@@ -36,7 +36,7 @@
         <div class="hero-copy">
           <span class="eyebrow">Aquisição integral</span>
           <h1 id="hero-title" aria-label="Transforme trajetos em oportunidades."><span class="hero-line"><span>Transforme</span></span><span class="hero-line"><span>trajetos em</span></span><span class="hero-line blue"><span>oportunidades.</span></span></h1>
-          <p id="project-summary">Uma plataforma de fretes com aplicativos, painel e design. Projeto em pré-lançamento, disponível para aquisição integral.</p>
+          <p id="project-summary">Uma plataforma para conectar quem precisa transportar a quem faz o frete. Conheça o projeto completo e as possibilidades para o seu próximo negócio.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#apresentacao" data-watch><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="m6 3 11 7L6 17V3Z"/></svg>Assistir ao vídeo</a>
             <a class="btn btn-outline" href="./apresentacao.html">Apresentação completa <span aria-hidden="true">↗</span></a>
@@ -69,6 +69,19 @@
           <div class="video-message" id="video-message" role="status"></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  
+  <section class="written-section" id="sobre" aria-label="Apresentação por escrito">
+    <div class="container reading-container">
+      <article class="article-content reading-copy">
+        <section id="visao-geral"><span class="eyebrow">A plataforma</span><h2>Uma necessidade. Uma conexão. Um frete resolvido.</h2><p>O Frete Express aproxima pessoas e empresas de motoristas e transportadores, reunindo as etapas da contratação em uma experiência digital.</p><p>O projeto contempla a jornada do cliente, a atuação do profissional e a administração da plataforma.</p></section>
+        <section id="funcionamento"><h2>Como funciona</h2><h3>O cliente informa o que precisa.</h3><p>Define a carga, o tipo de serviço e o trajeto. As informações do pedido ajudam o profissional a preparar uma proposta.</p><h3>Recebe propostas e escolhe.</h3><p>Consulta os orçamentos, conhece o veículo e o perfil do transportador, escolhe o profissional e realiza o pagamento pelo aplicativo.</p><h3>Acompanha até a entrega.</h3><p>Acompanhamento em tempo real, chat e confirmação da entrega integram a jornada. As avaliações completam a experiência.</p></section>
+        <section id="diferenciais"><h2>Mais caminhos para o mesmo negócio.</h2><p>Cinco diferenciais que ampliam as possibilidades de posicionamento e uso da plataforma.</p><h3>Personalização da marca</h3><p>Adapte a identidade visual para uma empresa, um projeto regional ou até um time de futebol. A tecnologia pode fazer parte de uma proposta alinhada ao público que você quer alcançar.</p><h3>Atuação por região</h3><p>Estruture a comercialização do produto por região e desenvolva parcerias locais. A proposta pode acompanhar a identidade e o contexto de cada território.</p><h3>Carros com reboque</h3><p>O projeto contempla carros com reboque, permitindo que motoristas que já trabalham com aplicativos explorem outra modalidade de transporte.</p><h3>Frete de retorno</h3><p>Depois da entrega, o motorista pode aproveitar o retorno para transportar outra carga. A modalidade amplia o uso do trajeto e pode permitir uma proposta mais competitiva.</p><h3>Frete pelo caminho</h3><p>Em uma viagem de Pelotas a Porto Alegre, por exemplo, o motorista pode atender uma coleta ou entrega em Camaquã. O frete pelo caminho aproveita possibilidades durante o percurso.</p></section>
+        <section id="aquisicao"><span class="eyebrow">Aquisição integral</span><h2>O projeto por inteiro. O próximo capítulo é seu.</h2><p>Uma base tecnológica para quem quer desenvolver um negócio próprio no transporte e na logística.</p><h3>Aplicativos</h3><p>Projeto dos aplicativos Android e iOS para a experiência de clientes e profissionais.</p><h3>Servidor e backend</h3><p>A estrutura de servidor e a lógica que dão suporte ao funcionamento da plataforma.</p><h3>Painel administrativo</h3><p>O ambiente de administração que integra o conjunto de gestão do projeto.</p><h3>Site de apresentação</h3><p>A landing page que faz parte do pacote original da plataforma.</p><h3>Design no Figma</h3><p>O design das telas e fluxos para orientar a evolução da experiência.</p><h3>Tecnologia do projeto</h3><p>Venda integral para o comprador assumir a tecnologia e desenvolver sua estratégia.</p><p class="reading-note">Projeto em pré-lançamento. O comprador assume as atualizações necessárias e a preparação do lançamento. Escopo de entrega e condições são definidos na negociação.</p></section>
+        <section id="perguntas"><h2>Perguntas frequentes</h2><div class="faq-list"><details><summary>O que está sendo vendido?</summary><p>A aquisição integral do projeto Frete Express, composto por aplicativos Android e iOS, servidor, painel administrativo, site de apresentação e design no Figma. Os detalhes da entrega e da transferência são alinhados na negociação.</p></details><details><summary>Posso usar a minha própria marca?</summary><p>A personalização da identidade faz parte dos diferenciais informados para o projeto. A proposta pode ser adaptada à identidade de uma empresa, região ou clube.</p></details><details><summary>Qual é o estágio atual do projeto?</summary><p>O Frete Express está em pré-lançamento. O comprador assume a tecnologia, realiza as atualizações necessárias e prepara a operação e o lançamento com sua estratégia.</p></details><details><summary>Como saber o valor e as condições?</summary><p>O valor é tratado diretamente com o responsável pela venda. A conversa comercial permite conhecer o escopo da entrega e alinhar as condições da aquisição integral.</p></details></div></section>
+      </article>
     </div>
   </section>
 
