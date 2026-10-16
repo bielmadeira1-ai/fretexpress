@@ -50,7 +50,7 @@ h1,h2,h3,p{margin-top:0}h1,h2,h3{font-weight:700;letter-spacing:-.055em}h1{font-
 
 @media(max-width:850px){html{scroll-padding-top:96px}}
 
-/* The main page has a single summary; full copy lives in apresentacao.html. */
+/* Compact opening with the summary beside the original product screens. */
 .home-clean .hero-grid{min-height:600px;gap:65px}
 .home-clean .hero-art{height:560px}
 .home-clean .hero-copy{padding-block:15px 30px}
@@ -118,34 +118,20 @@ h1,h2,h3,p{margin-top:0}h1,h2,h3{font-weight:700;letter-spacing:-.055em}h1{font-
  .home-clean .video-section h2{font-size:29px}
 }
 
-/* All presentation copy follows a single centered reading column. */
-.home-column .hero-grid{display:flex;flex-direction:column;gap:45px;min-height:0}
-.home-column .hero-copy{width:100%;max-width:940px;text-align:center;padding-block:28px 0}
-.home-column .hero-copy .eyebrow{justify-content:center;margin-bottom:24px}
-.home-column .hero-copy h1{max-width:none;font-size:clamp(50px,6vw,82px);margin-inline:auto;margin-bottom:25px}
-.home-column .hero-line{display:inline-block}
-.home-column .hero-line:not(:last-child){margin-right:.16em}
-.home-column #project-summary{max-width:590px;margin-inline:auto;font-size:16px;line-height:1.8}
-.home-column .hero-actions{justify-content:center;margin-top:28px}
-.home-column .hero-art{width:100%;max-width:980px;height:430px;flex:none}
-.home-column .phone-back{width:159px;left:calc(50% - 180px);top:25px}
-.home-column .phone-front{width:196px;right:calc(50% - 196px);top:58px}
-.home-column .art-backdrop{left:50%;top:48px;transform:translateX(-50%);width:460px;height:460px}
-.home-column .art-route{width:66%;left:17%}
-.home-column .video-section{margin-top:70px}
-.written-section{padding-block:90px 25px}
-.reading-container{max-width:900px}
-.reading-copy{max-width:760px;margin-inline:auto}
-.reading-copy section{margin-bottom:46px;padding-bottom:40px}
+/* Explanatory copy remains together, with tighter section spacing. */
+.written-section{padding-block:64px 8px}
+.reading-container{max-width:1000px}
+.reading-copy{max-width:840px;margin-inline:auto}
+.reading-copy section{margin-bottom:30px;padding-bottom:30px}
 .reading-copy h2{max-width:720px;font-size:36px;line-height:1.15}
 .reading-copy h3{font-size:23px;margin-top:28px;margin-bottom:13px}
 .reading-copy p{font-size:16px;line-height:1.9;margin-bottom:21px}
 .reading-copy .reading-note{font-size:13px;line-height:1.85;margin-top:30px;color:#78869a;border-left:2px solid var(--blue);padding-left:22px}
 .reading-copy details{padding-block:22px}
 .reading-copy details p{font-size:14px;line-height:1.85;margin-top:16px}
-.home-column .contact-grid,.presentation-column .contact-grid{display:block;max-width:830px;text-align:center}
-.home-column .contact-copy,.presentation-column .contact-copy{max-width:650px;margin-inline:auto}
-.home-column .contact-methods,.presentation-column .contact-methods{max-width:420px;width:100%;margin:30px auto 0}
+.presentation-column .contact-grid{display:block;max-width:830px;text-align:center}
+.presentation-column .contact-copy{max-width:650px;margin-inline:auto}
+.presentation-column .contact-methods{max-width:420px;width:100%;margin:30px auto 0}
 .presentation-column .contact-copy p{margin-inline:auto}
 .presentation-column .contact-copy .eyebrow{justify-content:center}
 .presentation-column .article-hero-grid{display:block;max-width:900px;margin:auto;text-align:center}
@@ -161,37 +147,16 @@ h1,h2,h3,p{margin-top:0}h1,h2,h3{font-weight:700;letter-spacing:-.055em}h1{font-
 .presentation-column .article-toc nav a{display:block;font-size:12px;border:0;margin:0;padding:8px 0}
 .presentation-column .article-toc .btn{display:inline-flex;margin-top:20px}
 @media(max-width:850px){
- .home-column .hero-grid{gap:35px}
- .home-column .hero-copy{max-width:760px;padding-top:10px}
- .home-column .hero-copy h1{font-size:clamp(52px,7.3vw,67px)}
- .home-column .hero-art{max-width:650px;height:420px}
- .home-column .phone-back{width:155px;left:calc(50% - 174px);top:24px}
- .home-column .phone-front{width:190px;right:calc(50% - 190px);top:55px}
- .home-column .art-backdrop{width:430px;height:430px;top:54px}
- .written-section{padding-top:68px}
+ .written-section{padding-top:54px}
  .reading-copy h2{font-size:33px}
 }
 @media(max-width:480px){
- .home-column .hero-copy h1{font-size:clamp(43px,10.8vw,51px)}
- .home-column .hero-line{display:block;margin-right:0!important}
- .home-column #project-summary{font-size:14px;line-height:1.8}
- .home-column .hero-art{height:390px}
- .home-column .phone-back{width:135px;left:10%;top:31px}
- .home-column .phone-front{width:161px;right:9%;top:75px}
- .home-column .art-backdrop{width:340px;height:340px;top:62px}
- .home-column .art-route{width:100%;left:0}
- .written-section{padding-top:55px}
+ .written-section{padding-top:44px}
  .reading-copy h2{font-size:29px}
  .reading-copy h3{font-size:21px}
  .reading-copy p{font-size:15px;line-height:1.9}
- .reading-copy section{margin-bottom:34px;padding-bottom:30px}
+ .reading-copy section{margin-bottom:26px;padding-bottom:26px}
  .reading-copy .reading-note{font-size:12px;padding-left:18px}
- .home-column .contact-section h2{font-size:36px}
-}
-@media(max-width:360px){
- .home-column .hero-art{height:355px}
- .home-column .phone-back{width:121px;left:7%;top:29px}
- .home-column .phone-front{width:143px;right:7%;top:66px}
 }
 .presentation-column .article-screen{display:block}
 .presentation-column .article-screen img{margin:0 auto 24px}
