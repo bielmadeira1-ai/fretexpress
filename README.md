@@ -2,6 +2,8 @@
 
 Site estático em português para apresentar a aquisição integral do projeto Frete Express. Inclui vídeo completo de 94 segundos, legendas, apresentação por escrito, diferenciais e canais de contato.
 
+O símbolo da marca em `public/assets/brand.svg` segue a referência fornecida pelo responsável: círculo azul com traço central e seta laranja, sem fundo, aplicado no cabeçalho, no rodapé e no ícone da aba.
+
 A abertura mantém o texto à esquerda e as telas animadas à direita no computador, com empilhamento no celular. Os textos do funcionamento, dos diferenciais e do pacote de aquisição continuam reunidos em um bloco de leitura, com espaçamento reduzido entre seções. A apresentação detalhada de `apresentacao.html` usa coluna única, com índice recolhível acima do texto. A interface preserva o vídeo, a abertura tipográfica animada, o movimento suave das telas, a revelação ao rolar e a galeria com ampliação, navegação por teclado e diálogo nativo. Os efeitos respeitam a preferência de redução de movimento. O WhatsApp comercial funciona também sem JavaScript; o e-mail só é exibido quando informado.
 
 ## Estrutura
