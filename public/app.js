@@ -1,6 +1,8 @@
 (() => {
   'use strict';
 
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
   const menuButton = document.querySelector('.menu-button');
   const menu = document.querySelector('.nav');
   const closeMenu = () => {
@@ -125,6 +127,12 @@
     document.querySelector('#feature-description').textContent = content.description;
     document.querySelector('#feature-visual').innerHTML = content.visual;
     panel.querySelector('.visual-caption').textContent = content.caption;
+    if (!reducedMotion.matches && typeof panel.animate === 'function') {
+      panel.animate([
+        { opacity: 0.55, transform: 'translateY(7px)' },
+        { opacity: 1, transform: 'translateY(0)' }
+      ], { duration: 300, easing: 'cubic-bezier(.2,.75,.2,1)' });
+    }
   };
   featureTabs.forEach((tab, index) => {
     tab.addEventListener('click', () => selectFeature(tab));
@@ -142,10 +150,119 @@
   });
   const tabsList = document.querySelector('.feature-tabs');
   if (tabsList) {
-    const mobile = window.matchMedia('(max-width: 800px)');
+    const mobile = window.matchMedia('(max-width: 850px)');
     const setOrientation = () => tabsList.setAttribute('aria-orientation', mobile.matches ? 'horizontal' : 'vertical');
     setOrientation();
     mobile.addEventListener('change', setOrientation);
+  }
+
+  // Full-size original screens, with native dialog focus and Escape handling.
+  const previews = [...document.querySelectorAll('[data-preview]')];
+  const screenDialog = document.querySelector('#screen-dialog');
+  if (previews.length && screenDialog && typeof screenDialog.showModal === 'function') {
+    const dialogImage = document.querySelector('#screen-dialog-image');
+    const dialogTitle = document.querySelector('#screen-dialog-title');
+    let currentScreen = 0;
+    let previousOverflow = '';
+    const renderScreen = index => {
+      currentScreen = (index + previews.length) % previews.length;
+      const trigger = previews[currentScreen];
+      const source = trigger.querySelector('img');
+      dialogImage.src = trigger.href;
+      dialogImage.alt = source.alt;
+      dialogTitle.textContent = `${trigger.dataset.caption} · ${currentScreen + 1}/${previews.length}`;
+    };
+    previews.forEach((trigger, index) => trigger.addEventListener('click', event => {
+      event.preventDefault();
+      renderScreen(index);
+      previousOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      screenDialog.showModal();
+    }));
+    screenDialog.querySelector('[data-screen-prev]').addEventListener('click', () => renderScreen(currentScreen - 1));
+    screenDialog.querySelector('[data-screen-next]').addEventListener('click', () => renderScreen(currentScreen + 1));
+    screenDialog.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault();
+        renderScreen(currentScreen + (event.key === 'ArrowRight' ? 1 : -1));
+      }
+    });
+    screenDialog.addEventListener('click', event => {
+      if (event.target === screenDialog) screenDialog.close();
+    });
+    screenDialog.addEventListener('close', () => { document.body.style.overflow = previousOverflow; });
+  }
+
+  // Reveal each content block once; preserve readable content without JS.
+  if ('IntersectionObserver' in window && !reducedMotion.matches) {
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.06, rootMargin: '0px 0px -35px 0px' });
+    const revealSelectors = '.section-heading, .overview-copy, .step, .feature-tabs, .feature-panel, .package-item, .screens-top, .screen-example, .faq-layout > div, .contact-copy, .contact-methods, .article-content section';
+    document.querySelectorAll(revealSelectors).forEach((element, index) => {
+      element.style.setProperty('--reveal-delay', `${Math.min(index % 3, 2) * 55}ms`);
+      element.classList.add('reveal-pending');
+      revealObserver.observe(element);
+    });
+    document.documentElement.classList.add('motion-ready');
+  }
+
+  // One passive scroll listener and one animation frame for progress/parallax.
+  const header = document.querySelector('.site-header');
+  const heroArt = document.querySelector('.hero-art');
+  const desktop = window.matchMedia('(min-width: 851px)');
+  let framePending = false;
+  const updateScroll = () => {
+    framePending = false;
+    const y = window.scrollY;
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = total > 0 ? Math.max(0, Math.min(1, y / total)) : 0;
+    document.documentElement.style.setProperty('--reading-progress', progress.toFixed(4));
+    header?.classList.toggle('is-scrolled', y > 20);
+    if (heroArt) {
+      const offset = !reducedMotion.matches && desktop.matches ? -Math.min(y * 0.035, 19) : 0;
+      heroArt.style.setProperty('--scene-y', `${offset.toFixed(1)}px`);
+    }
+  };
+  const scheduleScroll = () => {
+    if (framePending) return;
+    framePending = true;
+    window.requestAnimationFrame(updateScroll);
+  };
+  window.addEventListener('scroll', scheduleScroll, { passive: true });
+  window.addEventListener('resize', scheduleScroll, { passive: true });
+  window.addEventListener('pageshow', scheduleScroll);
+  reducedMotion.addEventListener('change', scheduleScroll);
+  updateScroll();
+
+  const floatingContact = document.querySelector('.floating-contact');
+  const contactSection = document.querySelector('#contato');
+  if ('IntersectionObserver' in window && floatingContact && contactSection) {
+    const contactObserver = new IntersectionObserver(entries => {
+      const visible = entries.some(entry => entry.isIntersecting);
+      floatingContact.classList.toggle('is-hidden', visible);
+      floatingContact.tabIndex = visible ? -1 : 0;
+      floatingContact.setAttribute('aria-hidden', String(visible));
+    }, { threshold: 0.15 });
+    contactObserver.observe(contactSection);
+  }
+
+  const sectionLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
+  if ('IntersectionObserver' in window && sectionLinks.length) {
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        sectionLinks.forEach(link => link.classList.toggle('is-active', link.hash === '#' + entry.target.id));
+      });
+    }, { rootMargin: '-15% 0px -65% 0px', threshold: 0 });
+    sectionLinks.forEach(link => {
+      const section = document.querySelector(link.hash);
+      if (section) sectionObserver.observe(section);
+    });
   }
 
   const tocLinks = [...document.querySelectorAll('.article-toc nav a')];
@@ -174,6 +291,7 @@
       link.href = href;
       if (type === 'whatsapp') { link.target = '_blank'; link.rel = 'noopener noreferrer'; }
       value.replaceChildren(link);
+      row.hidden = false;
       row.classList.remove('pending');
       row.querySelector('.out-arrow').hidden = false;
     });
@@ -187,6 +305,9 @@
       if (/^[1-9]\d{7,14}$/.test(phone)) {
         const text = typeof data.message === 'string' ? data.message : 'Olá! Gostaria de conhecer o projeto Frete Express.';
         activateContact('whatsapp', formatPhone(phone), `https://wa.me/${phone}?text=${encodeURIComponent(text)}`);
+        document.querySelectorAll('[data-whatsapp-link]').forEach(link => {
+          link.href = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+        });
         active = true;
       }
       if (/^[^\s@\r\n]+@[^\s@\r\n]+\.[^\s@\r\n]+$/.test(email)) {
@@ -197,5 +318,5 @@
         element.textContent = 'Entre em contato para conhecer os materiais e conversar sobre a aquisição do projeto.';
       });
     })
-    .catch(() => { /* Preserve the honest contact placeholder when configuration is unavailable. */ });
+    .catch(() => { /* Keep the commercial WhatsApp in the HTML usable if loading configuration fails. */ });
 })();

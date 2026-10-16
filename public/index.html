@@ -17,8 +17,9 @@
   <link rel="stylesheet" href="./styles.css">
   <script src="./app.js" defer></script>
 </head>
-<body>
+<body data-page="home">
 <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+<div class="reading-progress" aria-hidden="true"></div>
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="./" aria-label="Frete Express, início"><img src="./assets/brand.svg" width="35" height="35" alt=""><span class="brand-name">Frete Express</span></a>
@@ -34,7 +35,7 @@
       <div class="hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Projeto disponível para aquisição integral</p>
-          <h1 id="hero-title">Transforme trajetos<br>em <span class="blue">oportunidades.</span></h1>
+          <h1 id="hero-title" aria-label="Transforme trajetos em oportunidades."><span class="hero-line"><span>Transforme</span></span><span class="hero-line"><span>trajetos em</span></span><span class="hero-line blue"><span>oportunidades.</span></span></h1>
           <p>Uma plataforma para conectar quem precisa transportar a quem faz o frete. Conheça o projeto completo e as possibilidades para o seu próximo negócio.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#apresentacao" data-watch><svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="m6 3 11 7L6 17V3Z"/></svg>Assistir apresentação</a>
@@ -43,6 +44,7 @@
           <div class="hero-note">Tecnologia, gestão e design em um único projeto.</div>
         </div>
         <div class="hero-art" aria-label="Telas originais do design do Frete Express">
+          <div class="scene-label"><span>Frete Express · a plataforma</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></div><p class="scene-subtitle">Uma conexão.<br>Novos caminhos.</p>
           <div class="art-backdrop"></div>
           <svg class="art-route" viewBox="0 0 560 600" fill="none" aria-hidden="true"><path d="M20 400C-20 220 150 90 300 140s250 300 130 380-130-60-310-15" stroke="#a9bff8" stroke-width="2"/><circle cx="51" cy="260" r="8" fill="#3867f1" stroke="#fafbf9" stroke-width="5"/><circle cx="472" cy="432" r="9" fill="#ffb452" stroke="#fafbf9" stroke-width="5"/></svg>
           <div class="phone phone-back"><img src="./assets/06-cliente-detalhe-do-orcamento.png" width="301" height="720" alt="Design da tela com detalhes do orçamento, veículo e profissional"></div>
@@ -57,7 +59,7 @@
 
   <section class="section video-section" id="apresentacao" aria-labelledby="video-title">
     <div class="container">
-      <div class="section-heading"><div><p class="eyebrow light">Conheça em 1 minuto e 34 segundos</p><h2 id="video-title">Dê o play.<br>Veja as possibilidades.</h2></div><p>Uma visão da plataforma, da experiência do cliente e dos diferenciais que fazem parte do projeto.</p></div>
+      <div class="section-heading"><div><p class="eyebrow light">Conheça em 1 minuto e 34 segundos</p><h2 id="video-title">A plataforma,<br>em movimento.</h2></div><p>Uma visão da plataforma, da experiência do cliente e dos diferenciais que fazem parte do projeto.</p></div>
       <div class="video-grid">
         <div>
           <div class="video-shell">
@@ -138,12 +140,12 @@
   </section>
 
   <section class="screens-section" aria-labelledby="screens-title"><div class="container">
-    <div class="screens-top"><h3 id="screens-title">Uma visão de perto da experiência.</h3><p>Telas originais do design no Figma. Dados exibidos são exemplos.</p></div>
+    <div class="screens-top"><h3 id="screens-title">Explore cada detalhe da experiência.</h3><p>Toque nas telas para ampliar. Design original do projeto, com dados ilustrativos.</p></div>
     <div class="screens">
-      <figure class="screen-example"><div class="screen-viewport"><img src="./assets/04-cliente-revisao-do-pedido.png" loading="lazy" width="216" height="720" alt="Design da revisão do pedido com endereços e itens do frete"></div><figcaption><span>01</span>Revisão do pedido</figcaption></figure>
-      <figure class="screen-example"><div class="screen-viewport"><img src="./assets/05-cliente-orcamentos-recebidos.png" loading="lazy" width="360" height="640" alt="Design da lista de orçamentos enviados pelos transportadores"></div><figcaption><span>02</span>Orçamentos recebidos</figcaption></figure>
-      <figure class="screen-example"><div class="screen-viewport"><img src="./assets/07-cliente-pagamento-pix.png" loading="lazy" width="286" height="720" alt="Design da tela de pagamento por Pix"></div><figcaption><span>03</span>Pagamento no aplicativo</figcaption></figure>
-      <figure class="screen-example"><div class="screen-viewport"><img src="./assets/09-avaliacao-do-freteiro.png" loading="lazy" width="349" height="720" alt="Design da avaliação do transportador após o serviço"></div><figcaption><span>04</span>Avaliação do profissional</figcaption></figure>
+      <figure class="screen-example"><a class="screen-button" href="./assets/04-cliente-revisao-do-pedido.png" data-preview data-caption="Revisão do pedido" target="_blank" rel="noopener noreferrer" aria-label="Ampliar tela: Revisão do pedido" aria-haspopup="dialog"><div class="screen-viewport"><img src="./assets/04-cliente-revisao-do-pedido.png" loading="lazy" width="216" height="720" alt="Design da revisão do pedido com endereços e itens do frete"></div><span class="screen-open" aria-hidden="true">↗</span></a><figcaption><span>01</span>Revisão do pedido</figcaption></figure>
+      <figure class="screen-example"><a class="screen-button" href="./assets/05-cliente-orcamentos-recebidos.png" data-preview data-caption="Orçamentos recebidos" target="_blank" rel="noopener noreferrer" aria-label="Ampliar tela: Orçamentos recebidos" aria-haspopup="dialog"><div class="screen-viewport"><img src="./assets/05-cliente-orcamentos-recebidos.png" loading="lazy" width="360" height="640" alt="Design da lista de orçamentos enviados pelos transportadores"></div><span class="screen-open" aria-hidden="true">↗</span></a><figcaption><span>02</span>Orçamentos recebidos</figcaption></figure>
+      <figure class="screen-example"><a class="screen-button" href="./assets/07-cliente-pagamento-pix.png" data-preview data-caption="Pagamento no aplicativo" target="_blank" rel="noopener noreferrer" aria-label="Ampliar tela: Pagamento no aplicativo" aria-haspopup="dialog"><div class="screen-viewport"><img src="./assets/07-cliente-pagamento-pix.png" loading="lazy" width="286" height="720" alt="Design da tela de pagamento por Pix"></div><span class="screen-open" aria-hidden="true">↗</span></a><figcaption><span>03</span>Pagamento no aplicativo</figcaption></figure>
+      <figure class="screen-example"><a class="screen-button" href="./assets/09-avaliacao-do-freteiro.png" data-preview data-caption="Avaliação do profissional" target="_blank" rel="noopener noreferrer" aria-label="Ampliar tela: Avaliação do profissional" aria-haspopup="dialog"><div class="screen-viewport"><img src="./assets/09-avaliacao-do-freteiro.png" loading="lazy" width="349" height="720" alt="Design da avaliação do transportador após o serviço"></div><span class="screen-open" aria-hidden="true">↗</span></a><figcaption><span>04</span>Avaliação do profissional</figcaption></figure>
     </div>
   </div></section>
 
@@ -160,13 +162,20 @@
   <section class="contact-section" id="contato" aria-labelledby="contact-title"><div class="container contact-grid">
     <div class="contact-copy"><p class="eyebrow">Vamos conversar</p><h2 id="contact-title">Seu próximo negócio<br>pode começar aqui.</h2><p>Conheça os detalhes da aquisição e converse sobre os próximos passos do Frete Express.</p><p class="contact-note">Venda integral do projeto.<br>Valor e condições de transferência sob negociação.</p></div>
     <div class="contact-methods" data-contact-container>
-      <div class="contact-method pending" data-contact="whatsapp"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.4 7.6L3 21l1.6-4.9a8.5 8.5 0 1 1 15.9-4.3Z"/><path d="M8 7.8c0 4.4 3.8 8 8.2 8l.6-2.1-2.6-1.2-1 1c-1.7-.8-2.4-1.5-3.2-3.1l1-1L10 7l-2 .8Z"/></svg></span><div class="contact-meta"><small>WHATSAPP</small><strong data-contact-value>Contato em atualização</strong></div><span class="out-arrow" aria-hidden="true" hidden>↗</span></div>
-      <div class="contact-method pending" data-contact="email"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></svg></span><div class="contact-meta"><small>E-MAIL COMERCIAL</small><strong data-contact-value>Contato em atualização</strong></div><span class="out-arrow" aria-hidden="true" hidden>↗</span></div>
-      <p class="contact-status" data-contact-status>Os canais comerciais serão disponibilizados nesta página em breve.</p>
+      <a class="btn btn-white contact-action" href="https://wa.me/555381028334?text=Ol%C3%A1%21%20Conheci%20a%20apresenta%C3%A7%C3%A3o%20do%20Frete%20Express%20e%20gostaria%20de%20conversar%20sobre%20a%20aquisi%C3%A7%C3%A3o%20integral%20do%20projeto." data-whatsapp-link target="_blank" rel="noopener noreferrer">Conversar sobre a aquisição <span aria-hidden="true">↗</span></a>
+      <div class="contact-method" data-contact="whatsapp"><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.4 7.6L3 21l1.6-4.9a8.5 8.5 0 1 1 15.9-4.3Z"/><path d="M8 7.8c0 4.4 3.8 8 8.2 8l.6-2.1-2.6-1.2-1 1c-1.7-.8-2.4-1.5-3.2-3.1l1-1L10 7l-2 .8Z"/></svg></span><div class="contact-meta"><small>WHATSAPP</small><strong data-contact-value><a href="https://wa.me/555381028334?text=Ol%C3%A1%21%20Conheci%20a%20apresenta%C3%A7%C3%A3o%20do%20Frete%20Express%20e%20gostaria%20de%20conversar%20sobre%20a%20aquisi%C3%A7%C3%A3o%20integral%20do%20projeto." data-whatsapp-link target="_blank" rel="noopener noreferrer">+55 (53) 8102-8334</a></strong></div><span class="out-arrow" aria-hidden="true">↗</span></div>
+      <div class="contact-method pending" data-contact="email" hidden><span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></svg></span><div class="contact-meta"><small>E-MAIL COMERCIAL</small><strong data-contact-value>Contato em atualização</strong></div><span class="out-arrow" aria-hidden="true" hidden>↗</span></div>
+      <p class="contact-status" data-contact-status>Fale diretamente com o responsável para conhecer os materiais e as condições de aquisição.</p>
       <a class="contact-download" href="./apresentacao.html">Continue na apresentação completa <span aria-hidden="true">↗</span></a>
     </div>
   </div></section>
 </main>
+<dialog class="screen-dialog" id="screen-dialog" aria-labelledby="screen-dialog-title">
+  <div class="dialog-bar"><h2 id="screen-dialog-title">Telas do projeto</h2><form method="dialog"><button class="dialog-close" aria-label="Fechar visualização" title="Fechar">×</button></form></div>
+  <div class="dialog-image-wrap"><img id="screen-dialog-image" alt="Tela original do design do Frete Express"></div>
+  <div class="dialog-footer"><span>Design original · dados ilustrativos</span><div class="dialog-nav"><button type="button" data-screen-prev aria-label="Tela anterior">←</button><button type="button" data-screen-next aria-label="Próxima tela">→</button></div></div>
+</dialog>
+<a class="floating-contact" href="https://wa.me/555381028334?text=Ol%C3%A1%21%20Conheci%20a%20apresenta%C3%A7%C3%A3o%20do%20Frete%20Express%20e%20gostaria%20de%20conversar%20sobre%20a%20aquisi%C3%A7%C3%A3o%20integral%20do%20projeto." data-whatsapp-link target="_blank" rel="noopener noreferrer" aria-label="Conversar sobre a aquisição do Frete Express no WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 11.8a8.5 8.5 0 0 1-12.4 7.6L3 21l1.6-4.9a8.5 8.5 0 1 1 15.9-4.3Z"/><path d="M8 7.8c0 4.4 3.8 8 8.2 8l.6-2.1-2.6-1.2-1 1c-1.7-.8-2.4-1.5-3.2-3.1l1-1L10 7l-2 .8Z"/></svg><span>Vamos conversar</span></a>
 <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="./"><img src="./assets/brand.svg" alt="" width="28" height="28"><span class="brand-name">Frete Express</span></a><p>Apresentação comercial do projeto · Telas e cenários com dados ilustrativos.</p><a href="#conteudo">Voltar ao início ↑</a></div></footer>
 </body>
 </html>
