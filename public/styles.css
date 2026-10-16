@@ -49,3 +49,71 @@ h1,h2,h3,p{margin-top:0}h1,h2,h3{font-weight:700;letter-spacing:-.055em}h1{font-
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.motion-ready .reveal-pending{opacity:1;transform:none}.hero-art{transform:none!important}}
 
 @media(max-width:850px){html{scroll-padding-top:96px}}
+
+/* The main page has a single summary; full copy lives in apresentacao.html. */
+.home-clean .hero-grid{min-height:600px;gap:65px}
+.home-clean .hero-art{height:560px}
+.home-clean .hero-copy{padding-block:15px 30px}
+.home-clean #project-summary{max-width:440px;font-size:16px;line-height:1.8}
+.home-clean .hero-copy .eyebrow{margin-bottom:27px}
+.home-clean .phone-back{left:12%;top:57px;width:199px}
+.home-clean .phone-front{right:10%;top:104px;width:225px}
+.home-clean .art-backdrop{top:112px;left:12%;width:440px;height:440px}
+.home-clean .video-section{margin-top:75px;padding-block:66px 65px}
+.home-clean .video-section .container{max-width:1140px}
+.home-clean .video-grid{grid-template-columns:minmax(0,1fr);gap:0}
+.home-clean .video-section .section-heading{flex-direction:row;align-items:center;gap:25px;margin-bottom:32px}
+.home-clean .video-section h2{font-size:45px}
+.video-duration{flex:none;font-size:12px;color:#a7b9d8;font-variant-numeric:tabular-nums}
+.home-clean .video-caption{justify-content:flex-end}
+.home-clean .screens-section{padding-block:85px}
+.home-clean .screens-top{border:0;padding:0}
+.home-clean .screens-top h2{font-size:35px;margin:0}
+.home-clean .contact-section{padding-block:65px}
+.home-clean .contact-section h2{font-size:clamp(36px,4.2vw,58px);margin:0}
+.home-clean .contact-grid{grid-template-columns:1.1fr .9fr;gap:80px}
+.home-clean .contact-action{margin-bottom:0}
+.home-clean .contact-method{border:0;padding-bottom:0}
+.footer-note{font-size:10px;color:#7e8b9f;line-height:1.8}
+@media(max-width:1120px){
+ .home-clean .hero-grid{gap:35px;min-height:540px}
+ .home-clean .hero-art{height:510px}
+ .home-clean .phone-back{left:11%;top:60px;width:170px}
+ .home-clean .phone-front{right:9%;top:110px;width:192px}
+ .home-clean .art-backdrop{height:400px;width:400px;top:104px;left:5%}
+}
+@media(max-width:850px){
+ .home-clean .hero-grid{gap:35px}
+ .home-clean .hero-copy{padding-block:10px 0}
+ .home-clean .hero-art{height:525px}
+ .home-clean .phone-back{left:16%;top:53px;width:180px}
+ .home-clean .phone-front{right:13%;top:106px;width:215px}
+ .home-clean .art-backdrop{top:100px;left:17%;height:420px;width:420px}
+ .home-clean .video-section{margin-top:60px;padding-block:52px}
+ .home-clean .video-section h2{font-size:38px}
+ .home-clean .screens-section{padding-block:65px}
+ .home-clean .contact-grid{grid-template-columns:1fr;gap:28px}
+ .home-clean .contact-section{padding-block:55px}
+ .home-clean .footer-note{order:3;width:100%}
+}
+@media(max-width:480px){
+ .home-clean .hero-art{height:410px}
+ .home-clean .phone-back{width:143px;left:11%;top:37px}
+ .home-clean .phone-front{width:165px;right:9%;top:85px}
+ .home-clean .art-backdrop{height:330px;width:330px;top:78px;left:11%}
+ .home-clean #project-summary{font-size:14px;line-height:1.8}
+ .home-clean .hero-actions .btn{font-size:11px;padding-inline:13px}
+ .home-clean .video-section .section-heading{gap:15px;margin-bottom:26px}
+ .home-clean .video-section h2{font-size:33px}
+ .video-duration{font-size:10px}
+ .home-clean .screens-top h2{font-size:29px}
+ .home-clean .contact-section h2{font-size:38px}
+ .home-clean .contact-methods{max-width:none}
+}
+@media(max-width:360px){
+ .home-clean .hero-art{height:375px}
+ .home-clean .phone-back{width:127px;left:8%;top:37px}
+ .home-clean .phone-front{width:145px;right:8%;top:82px}
+ .home-clean .hero-actions .btn{font-size:10px}
+ .home-clean .video-section h2{font-size:29px}
+}

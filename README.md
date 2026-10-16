@@ -2,7 +2,7 @@
 
 Site estático em português para apresentar a aquisição integral do projeto Frete Express. Inclui vídeo completo de 94 segundos, capítulos navegáveis, legendas, apresentação por escrito, diferenciais e canais de contato.
 
-A interface possui abertura tipográfica animada, telas originais com movimento suave, revelação de conteúdo ao rolar, transições nos diferenciais e galeria com ampliação, navegação por teclado e diálogo nativo. Os efeitos respeitam a preferência de redução de movimento. O WhatsApp comercial funciona também sem JavaScript; o e-mail só é exibido quando informado.
+A página principal tem um único resumo, vídeo, telas originais e contato. A explicação completa fica em `apresentacao.html`. A interface preserva a abertura tipográfica animada, o movimento suave das telas, a revelação ao rolar e a galeria com ampliação, navegação por teclado e diálogo nativo. Os efeitos respeitam a preferência de redução de movimento. O WhatsApp comercial funciona também sem JavaScript; o e-mail só é exibido quando informado.
 
 ## Estrutura
 
