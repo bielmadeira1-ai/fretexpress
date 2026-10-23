@@ -160,3 +160,28 @@ h1,h2,h3,p{margin-top:0}h1,h2,h3{font-weight:700;letter-spacing:-.055em}h1{font-
 }
 .presentation-column .article-screen{display:block}
 .presentation-column .article-screen img{margin:0 auto 24px}
+
+/* Sale proposal: readable copy beside the supplied vertical video. */
+.home-clean .sale-section{padding-block:76px}
+.sale-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:90px;align-items:center}
+.sale-copy{max-width:610px}
+.home-clean .sale-copy h2{font-size:clamp(42px,4.8vw,64px);line-height:1.04;margin-bottom:28px}
+.sale-copy>p{font-size:16px;line-height:1.85;color:#b9c6db}
+.sale-copy .sale-intro{font-size:23px;line-height:1.4;letter-spacing:-.025em;color:#fff;max-width:480px}
+.sale-copy .eyebrow{font-size:10px;color:#b9c6db}
+.sale-highlights{list-style:none;padding:0;margin:28px 0 32px;display:grid;gap:12px;font-size:14px;color:#e1e8f4}
+.sale-highlights li{display:flex;gap:12px;align-items:baseline}
+.sale-highlights li:before{content:'↗';color:var(--orange)}
+.sale-actions{display:flex;align-items:center;flex-wrap:wrap;gap:24px}
+.sale-text-link{font-size:13px;color:#d6e1f5;display:inline-flex;align-items:center;gap:10px;border-bottom:1px solid #ffffff45;padding-block:6px}
+.sale-text-link:hover{color:#fff;border-color:#fff}
+.sale-copy .sale-note{font-size:12px;color:#a1b2ce;margin:23px 0 0}
+.sale-media{width:100%;max-width:340px;justify-self:center}
+.sale-video-heading{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:18px}
+.sale-video-heading h3{font-size:18px;letter-spacing:-.02em;margin:0}
+.sale-media .video-shell{aspect-ratio:512/910;width:100%;border-radius:12px}
+.sale-media .video-caption{justify-content:space-between;align-items:baseline;gap:12px;font-size:10px;line-height:1.6}
+.sale-media .video-caption a{white-space:nowrap}
+@media(max-width:1120px){.sale-grid{gap:50px;grid-template-columns:minmax(0,1fr) minmax(0,310px)}.sale-actions{gap:18px}}
+@media(max-width:850px){.home-clean .sale-section{padding-block:55px}.sale-grid{grid-template-columns:1fr;gap:40px}.sale-copy{max-width:640px}.home-clean .sale-copy h2{font-size:48px}.sale-media{max-width:340px}.sale-copy .sale-intro{max-width:550px}}
+@media(max-width:480px){.home-clean .sale-copy h2{font-size:40px}.sale-copy>p{font-size:15px}.sale-copy .sale-intro{font-size:21px}.sale-highlights{font-size:13px;gap:11px}.sale-actions{align-items:flex-start;flex-direction:column;gap:15px}.sale-media{max-width:300px}.sale-copy .sale-note{font-size:11px}.sale-video-heading h3{font-size:17px}}

@@ -1,6 +1,6 @@
 # Frete Express — apresentação comercial
 
-Site estático em português para apresentar a aquisição integral do projeto Frete Express. Inclui vídeo completo de 94 segundos, legendas, apresentação por escrito, diferenciais e canais de contato.
+Site estático em português para apresentar a aquisição integral do projeto Frete Express. Inclui a seção de venda integral, o vídeo fornecido de 83 segundos, apresentação detalhada por escrito, diferenciais e canais de contato. O novo vídeo está em `public/assets/frete-express-venda.mp4`, com reprodução vertical, controles nativos e carregamento inicial apenas dos metadados. As legendas e o vídeo anteriores permanecem como arquivos históricos e não são vinculados ao novo vídeo.
 
 O símbolo da marca em `public/assets/brand.svg` segue a referência fornecida pelo responsável: círculo azul com traço central e seta laranja, sem fundo, aplicado no cabeçalho, no rodapé e no ícone da aba.
 
@@ -29,3 +29,7 @@ O vídeo e as telas são os materiais existentes do projeto. As telas vêm do de
 ## Publicação
 
 Conectar este repositório à Vercel, usar o preset Other e a saída `public`. A configuração está em `vercel.json`; a publicação não exige variáveis de ambiente. Alterações na branch de produção devem gerar novas publicações pela integração Git.
+
+## Seção de venda
+
+A âncora `/#venda` abre a proposta de aquisição; `/#apresentacao` continua levando ao vídeo e `/#aquisicao` reúne a descrição detalhada do pacote. O texto inclui Android/iOS, front-end, back-end, servidor, painel, fluxograma, Figma, landing page e CNPJ. Valor e condições permanecem sob negociação. O WhatsApp comercial é +55 (53) 98102-8334, conforme o vídeo fornecido.
